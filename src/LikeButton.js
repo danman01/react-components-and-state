@@ -4,12 +4,13 @@ class LikeButton extends Component {
 
   render() {
 
-  const message = this.props.liked
+  const message = this.props.liked ? "You like this!" : "Like this"
+  // const onClick = this.props.onClick.bind(this)
   return (
 
     <div>
-      <button onClick={this.props.onClick}>
-        {{message}}
+      <button className="btn btn-primary" onClick={this.props.onClick}>
+        {message}
       </button>
     </div>
 

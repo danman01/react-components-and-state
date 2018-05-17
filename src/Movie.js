@@ -9,11 +9,12 @@ class Movie extends Component {
   constructor (props) {
     super()
 
-    this.liked = false
-  }
+    this.state= { liked: false }
+    this.toggleLiked = this.toggleLiked.bind(this)
+}
 
   toggleLiked () {
-    this.setState({ liked: !this.state.liked })
+    this.setState({liked: !this.state.liked})
   }
 
   render() {
@@ -26,7 +27,7 @@ class Movie extends Component {
 //    ) : (
 //      <likeButton liked=false
 
-    const likeButton = <LikeButton onClick={this.toggleLiked} liked={this.liked} />
+    const likeButton = <LikeButton onClick={this.toggleLiked} liked={this.state.liked} />
 
     return (
       <div>
@@ -38,7 +39,9 @@ class Movie extends Component {
         <div>Starring: 
           {actors}
         </div>
-        <div> {{likeButton}} </div>
+        <div>
+          {likeButton}
+        </div>
       </div>
           
     );
