@@ -24,7 +24,7 @@ class Movie extends Component {
     const likeButton = <LikeButton id={this.props.id} onClick={this.props.toggleLiked} liked={this.props.liked} />
 
     return (
-      <div>
+      <div className={'display-' + this.props.display}>
         <span>{this.props.id}</span>
         <h1>
           {this.props.title}
