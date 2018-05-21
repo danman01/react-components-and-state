@@ -9,7 +9,7 @@ class LikeButton extends Component {
   return (
 
     <div>
-      <button className="btn btn-primary" onClick={this.props.onClick}>
+      <button data-id={this.props.id} className="btn btn-primary" onClick={this.props.onClick}>
         {message}
       </button>
     </div>

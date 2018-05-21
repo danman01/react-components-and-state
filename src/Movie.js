@@ -8,14 +8,8 @@ import LikeButton from './LikeButton'
 class Movie extends Component {
   constructor (props) {
     super()
-
-    this.state= { liked: false }
-    this.toggleLiked = this.toggleLiked.bind(this)
-}
-
-  toggleLiked () {
-    this.setState({liked: !this.state.liked})
   }
+
 
   render() {
     const actors = this.props.actors.map((actor, i) => {
@@ -27,11 +21,11 @@ class Movie extends Component {
 //    ) : (
 //      <likeButton liked=false
 
-    const likeButton = <LikeButton onClick={this.toggleLiked} liked={this.state.liked} />
+    const likeButton = <LikeButton id={this.props.id} onClick={this.props.toggleLiked} liked={this.props.liked} />
 
     return (
       <div>
-        <span>{this.props.index}</span>
+        <span>{this.props.id}</span>
         <h1>
           {this.props.title}
         </h1>
